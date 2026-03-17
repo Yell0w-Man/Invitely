@@ -1,11 +1,14 @@
-from typing import List, Optional
+from typing import List, Optional, TYPE_CHECKING
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from api.v1.models.base import Base
-from api.v1.models.auth_account import AuthAccount
+
+if TYPE_CHECKING:
+    from api.v1.models.auth_account import AuthAccount
+    
 
 class User(Base):
     __tablename__ = "users"
-
+       
     name: Mapped[str] = mapped_column(nullable=False)
     phone: Mapped[Optional[str]] = mapped_column(unique=True, nullable=True)
     

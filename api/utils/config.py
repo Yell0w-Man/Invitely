@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings
 BASE_DIR = Path(__file__).resolve().parent
 
 
-class Settings(BaseSettings):
+class Settings(BaseSettings):   
     """Class to hold application's config values."""
     
     # Application configurations
@@ -73,4 +73,4 @@ class Settings(BaseSettings):
         "GOOGLE_REDIRECT_FRONTEND_URL", default="")
 
 
-settings = Settings()
+settings = Settings()   
