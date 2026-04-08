@@ -4,7 +4,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from api.v1.routes import api_version_one    
 from api.db.database import get_async_db, check_database_connection
 from api.utils.responses import success_response
-from api.v1.routes import event 
 
  
 app = FastAPI()  

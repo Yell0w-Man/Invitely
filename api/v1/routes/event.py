@@ -12,12 +12,12 @@ from api.v1.services.event import (
 from utils.jwt_handler import get_current_user
 
 
-router = APIRouter(
+event_router = APIRouter(
     prefix="/events",
     tags=["Events"]
 )
 
-@router.post("/", response_model=EventResponse)
+@event_router.post("/", response_model=EventResponse)
 def create_event(
     event: EventCreate,
     db: Session = Depends(get_db),
@@ -31,7 +31,7 @@ def create_event(
     )
 
 
-@router.get("/", response_model=list[EventResponse])
+@event_router.get("/", response_model=list[EventResponse])
 def get_user_events(
     db: Session = Depends(get_db),
     current_user = Depends(get_current_user)
@@ -43,7 +43,7 @@ def get_user_events(
     )
 
 
-@router.delete("/{event_id}")
+@event_router.delete("/{event_id}")
 def delete_event(
     event_id: int,
     db: Session = Depends(get_db),
