@@ -22,9 +22,9 @@ class Event(Base):
         nullable=False
     )
 
-    # Plan type (free or paid)
+    # Plan type (free or paid)       
     plan: Mapped[Plan] = mapped_column(
-        Enum(Plan, name="plan_enum"),
+        Enum(Plan, name="plan_enum"),         
         nullable=False,
         default=Plan.FREE
     )

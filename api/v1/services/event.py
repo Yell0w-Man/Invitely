@@ -1,4 +1,3 @@
-# services/event_service.py
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from api.v1.models.event import Event

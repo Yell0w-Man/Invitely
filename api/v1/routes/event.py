@@ -2,12 +2,12 @@
 
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from db.database import get_db
+from api.db.database import get_db
 from api.v1.schemas import EventCreate, EventResponse
 from api.v1.services.event import (
     create_event_service,
     get_user_events_service,
-    delete_event_service
+    delete_event_service          
 )                                              
 from utils.jwt_handler import get_current_user
 
